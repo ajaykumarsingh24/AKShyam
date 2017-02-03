@@ -1,0 +1,213 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SavvyGreatAdmin.master.cs"
+Inherits="SavvyGreat.Admin.SavvyGreatAdmin" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Savvygreat</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../dist/css/SG.min.css"/>
+
+    <!-- Savvygreat Skins. Choose a skin from the css/skins
+    folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css"/>
+    <!-- iCheck -->
+    <link rel="stylesheet" href="../plugins/iCheck/flat/blue.css"/>
+    <!-- Morris chart -->
+    <link rel="stylesheet" href="../plugins/morris/morris.css"/>
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="../plugins/jvectormap/jquery-jvectormap-1.2.2.css"/>
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="../plugins/datepicker/datepicker3.css"/>
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker-bs3.css"/>
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"/>
+
+    <!-- Custom styles for this template created by developer -->
+    <link href="../Content/css/SavvyCustom.css" rel="stylesheet"/>
+    <link href="../Content/css/StylesheetMenus.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+<form id="form1" runat="server">
+    <cc1:ToolkitScriptManager ID="ScripManager" runat="server">
+        <Scripts>
+            <%--<asp:ScriptReference Name="MsAjaxBundle" />--%>
+            <%--<asp:ScriptReference Name="jquery" />--%>
+            <%--     <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />--%>
+            <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js"/>
+            <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js"/>
+            <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js"/>
+            <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js"/>
+            <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js"/>
+            <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js"/>
+            <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js"/>
+            <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js"/>
+            <%--<asp:ScriptReference Name="WebFormsBundle" />--%>
+
+            <asp:ScriptReference Name="ExtenderBase.BaseScripts.js" Assembly="AjaxControlToolkit"/>
+            <asp:ScriptReference Name="Common.Common.js" Assembly="AjaxControlToolkit"/>
+        </Scripts>
+    </cc1:ToolkitScriptManager>
+    <asp:UpdatePanel ID="UpdMaster" runat="server">
+        <ContentTemplate>
+            <div class="row">
+                <header class="main-header">
+                    <ul class="main-nav">
+                        <li class="dropdown">
+                            <a href="#">Masters</a>
+                            <ul class="drop-nav">
+                                <li><li>
+                                    <a runat="server" href="~/Admin/companies.aspx">Company Details</a>
+                                </li>
+                                <li><li>
+                                    <a runat="server" href="~/Admin/roles.aspx">Roles Details</a>
+                                </li>
+                                <li><li>
+                                    <a runat="server" href="~/Admin/permissions.aspx">Permissions Details</a>
+                                </li>
+                                <li><li>
+                                    <a runat="server" href="~/Admin/UsersDetails.aspx">User Details</a>
+                                </li>
+                                    <li>
+                                    <a runat="server" href="~/Admin/Verifications/verfbiz.aspx">Verified Biz</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">Role/Permissions</a>
+                            <ul class="drop-nav">
+                                <li><li>
+                                    <a runat="server" href="RolePermissions.aspx">Role/Permission Details</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">Users/Roles</a>
+                            <ul class="drop-nav">
+                                <li><li>
+                                    <a runat="server" href="UserRoles.aspx">User/Role Details</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">Permissions</a>
+                            <ul class="drop-nav">
+                                <li><li>
+                                    <a runat="server" href="permissions.aspx">Permission Details</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#">Business</a>
+                            <ul class="drop-nav">
+                                <li>
+                                    <a href="Snapics.aspx">Snapics</a>
+                                </li>
+                                <li>
+                                    <a href="SGBizLink.aspx">SG Biz Link</a>
+                                </li>
+                                <li>
+                                    <a href="News.aspx">News</a>
+                                </li>
+                                <li>
+                                    <a href="CountryFlags.aspx">Country Flag</a>
+                                </li>
+                            </ul>
+
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">SG Biz</a>
+                            <ul class="drop-nav">
+                                <li><li>
+                                    <a runat="server" href="~/Admin/SGBizMaster/BizCategory.aspx">Biz Category</a>
+                                </li>
+                                <li>
+                                    <a runat="server" href="~/Admin/SGBizMaster/BizSubCategory.aspx">Biz Sub Category</a>
+                                </li>
+
+                                <li>
+                                    <a runat="server" href="~/Admin/SGBizMaster/BizItem.aspx">Biz Item</a>
+                                </li>
+
+
+                                <li>
+                                    <a id="A1" runat="server" href="~/Admin/SGBizMaster/BizItemSubCat.aspx">Biz Item Sub Category</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+
+                        <li class="dropdown">
+                            <a href="#">SG Society</a>
+                            <ul class="drop-nav">
+                                <li><li>
+                                    <a runat="server" href="~/Admin/SocietyCategory.aspx">Society Category</a>
+                                </li>
+                                <li>
+                                    <a runat="server" href="~/Admin/SocietyList.aspx">Society List</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">Ads</a>
+                            <ul class="drop-nav">
+                                <li><li>
+                                    <a runat="server" href="~/Admin/Ads.aspx">Ads details</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">Forums</a>
+                            <ul class="drop-nav">
+                                <li><li>
+                                    <a runat="server" href="~/Admin/Forum.aspx">Create Fourm</a>
+                                </li>
+                                <li>
+                                    <a runat="server" href="~/Admin/SocietyList.aspx">See Fourm</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </header>
+            </div>
+            <div class="row">
+                <div class="col-md-1">
+                    <asp:LinkButton ID="LinkButton1" ToolTip="Go to Login Page"
+                                    runat="server" OnClick="LinkButton1_Click" CssClass="btn btn-link btn-sm">
+                        <i class="glyphicon glyphicon-backward"></i>
+                        Back
+                    </asp:LinkButton>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+</form>
+</body>
+</html>
